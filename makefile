@@ -10,19 +10,19 @@ stop:
 restart: stop start
 
 connect_app:
-	@docker exec -it app bash
+	@docker exec -it sedric_test_app bash
 
 connect_nginx:
-	@docker exec -it nginx bash
+	@docker exec -it sedric_test_nginx bash
 
 connect_redis:
-	@docker exec -it redis bash
+	@docker exec -it sedric_test_redis bash
 
 connect_mysql:
-	@docker exec -it mysql bash
+	@docker exec -it sedric_test_mysql bash
 
 run_queue:
-	@docker exec app php artisan queue:work
+	@docker exec sedric_test_app php artisan queue:work
 
 run_schedule:
-	@docker exec app php artisan schedule:work
+	@docker exec sedric_test_app php artisan schedule:work
