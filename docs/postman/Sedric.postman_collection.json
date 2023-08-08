@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "1e568064-7c67-413d-afd2-30ff8efa5b27",
+		"name": "Sedric",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2227116"
+	},
+	"item": [
+		{
+			"name": "Get all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/audios",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"audios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"audio_url\": \"https://cdn.simplecast.com/audio/1bf11c/1bf11c14-f329-4a38-b3a4-d5a91aaa46a6/937ae2e8-004b-4a70-8c09-5dac3143014d/aaa4a6114532487cba85a384d4e30b18a26b0532_tc.mp3\",\n    \"sentences\": [\"are bitter from infan\", \"are bitter from infanddd\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/audios",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"audios"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
