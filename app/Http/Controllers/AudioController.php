@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateAudioRequest;
+use App\Jobs\Transcriber;
 use App\Models\Audio;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
@@ -32,6 +33,8 @@ class AudioController extends Controller
             'sentences' => $sentences->toArray(),
             'request_id' => Str::uuid()
         ]);
+
+        Transcriber::dispatch($audio);
 
         return responseJson([
             'body' => [

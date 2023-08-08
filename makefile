@@ -20,3 +20,9 @@ connect_redis:
 
 connect_mysql:
 	@docker exec -it sedric_mysql_1 bash
+
+run_queue:
+	@docker exec sedric_app_1 php artisan queue:work
+
+run_schedule:
+	@docker exec sedric_app_1 php artisan schedule:work

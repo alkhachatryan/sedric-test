@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Status;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,9 +16,17 @@ class Audio extends Model
         'audio_url',
         'sentences',
         'request_id',
+        'status',
     ];
 
     protected $casts = [
-      'sentences' => 'json'
+        'sentences' => 'json',
+        'status' => Status::class
     ];
+
+    public function setStatus(Status $status): void
+    {
+        $this->status = $status;
+        $this->save();
+    }
 }
